@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Resume Rating Page</title>
+	<style>
+		.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+		h1{
+  		color: #666;
+  		margin: 20px 10px 0px;
+  		padding: 0px 30px 0px 30px;
+		  text-align:center;
+		  display: inline-block;
+		  width: 52%;
+		  margin: 0 0 1px 3px;
+		  vertical-align: 15px;
+		}
+		.button {
+		  background-color: hsl(147, 76%, 47%);;
+		  border: none;
+		  color: white;
+		  padding: 15px 180px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		}
+		</style>
+</head>
+<body style="background-color:rgb(235, 235, 236);text-align:center">
+    
+    <form id = resumeForm method="post" style="width:70%;margin:auto;" enctype="multipart/form-data" target="_blank" >
+		<div  style="vertical-align: middle;text-align: center;">
+			
+			<h1 style="text-align:center;font-family: sans-serif;font-weight: normal">Upload your Resume files</h2>
+		</div>
+		<div style="margin: 20px;border:2px solid rgb(201, 199, 199);background-color:#00203fff; padding-left: 5%;">
+			<div>
+				<h3 style="color:#adefd1ff;font-family: sans-serif;font-weight: normal;padding-left: 30%;text-align:left">Upload Job Description:</h3>
+				<input class="btn" type="file" name="jobDescriptionFile">
+			</div>
+			<div>
+				<h3 style="color:#adefd1ff;margin-right:90px; font-family: sans-serif;font-weight: normal;padding-left: 30%;text-align:left">Upload Resume Files:</h3>
+				<input class="btn" type="file" name="resumeFiles" multiple>
+			</div>
+			<div style="margin-top:20px;text-align:center;">
+				<button class="button" type="submit" value="submit">Submit</button>
+			 </div>
+			 <div style="margin:20px">
+				{% with messages = get_flashed_messages() %}
+				{% if messages %}
+				<ul class=flashes>
+					{% for message in messages %}
+					<li>{{ message }}</li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+				{% endwith %}
+			</div>
+		</div>
+    </form>
+</body>
+</html>

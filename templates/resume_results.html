@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+</head>
+<body>
+<div style="padding-top:5% ;">
+	<table style="border-collapse: collapse;width:50%;margin:auto;">
+		<tr > 
+		<td align="center" colspan="3" >
+		<h2>Resume Ranking according to the percentage match</h2>
+		</td>
+		</tr>
+         {% for item in result %}
+            <tr>
+			   <td> {{ loop.index }}</td>
+               <td> {{ item[0] }} </td>
+               <td> {{ item[1] }} </td>
+            </tr>
+         {% endfor %}
+    </table>
+</div>
+</body>
+</html>
